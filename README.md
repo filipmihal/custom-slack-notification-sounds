@@ -1,6 +1,6 @@
 # Custom slack notification sounds
 
-## for linux vesrion of Slack Desktop app
+## for linux version of Slack Desktop app
 
 When it comes to having fun, Slack allows you to create custom emojis. It makes the chat experience tremendously better. However, there is no way to add custom notification sounds. There is currently only one that is worth consideration and it is the [Hummus](https://www.101soundboards.com/sounds/58615-hummus) sound. Unfortunately, most of us, including me, get quickly tired by never-ending "Hummus". In order to avoid this doom and gloom, I created a simple script that will play a random sound whenever I receive a Slack notification.
 
@@ -25,11 +25,12 @@ Make a script "play_sound.sh" that will play a random sound whenever there is a 
 string=$1
 match1="New message from"
 match2="New message in"
-if [[ $string =~ $match1 || $string =~ $match2]]
+if [[ "$string" =~ "$match1" || "$string" =~ "$match2" ]]
   then
     sound=`ls /your/path/sounds | shuf -n 1`
     mpg123 "/your/path/sounds/$sound"
 fi
+
 ```
 
 ### 4. step
