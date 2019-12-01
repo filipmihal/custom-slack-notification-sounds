@@ -1,0 +1,20 @@
+signal time=1575063452.071421 sender=org.freedesktop.DBus -> destination=:1.334 serial=2 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameAcquired
+   string ":1.334"
+signal time=1575063452.072208 sender=org.freedesktop.DBus -> destination=:1.334 serial=4 path=/org/freedesktop/DBus; interface=org.freedesktop.DBus; member=NameLost
+   string ":1.334"
+method call time=1575063456.752080 sender=:1.335 -> destination=:1.40 serial=6 path=/org/freedesktop/Notifications; interface=org.freedesktop.Notifications; member=GetServerInformation
+method call time=1575063456.757801 sender=:1.335 -> destination=:1.40 serial=7 path=/org/freedesktop/Notifications; interface=org.freedesktop.Notifications; member=Notify
+   string "notify-send"
+   uint32 0
+   string ""
+   string "New message from Pero"
+   string ""
+   array [
+   ]
+   array [
+      dict entry(
+         string "urgency"
+         variant             byte 1
+      )
+   ]
+   int32 -1
