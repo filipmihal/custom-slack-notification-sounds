@@ -32,7 +32,7 @@ if [[ $string =~ $match1 || $string =~ $match2]]
 fi
 ```
 
-### 3. step
+### 4. step
 
 Make a notification listener "notification_listener.sh" that will call [play_sound.sh](play_sound.sh) when a new notification is shown.
 
@@ -42,11 +42,11 @@ echo "running the listener script..."
 dbus-monitor "interface='org.freedesktop.Notifications'" | grep --line-buffered "string" | grep --line-buffered -e method -e ":" -e '""' -e urgency -e notify -v | grep --line-buffered '.*(?=string)|(?<=string).*' -oPi | grep --line-buffered -v '^\s*$' | grep --line-buffered '"[^"]*"' | xargs -I '{}' /bin/bash /your/path/play_sound.sh {}
 ```
 
-### 4. step
+### 5. step
 
 Add the listener to `/etc/profile.d/` directory. <br/> Mark it as executable: `chmod +x /etc/profile.d/notification_listener.sh`
 
-### 5. step
+### 6. step
 
 Enjoy your new Slack feature.
 ![enjoy](assets/meme.jpg)
